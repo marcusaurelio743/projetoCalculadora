@@ -12,10 +12,24 @@ public class MathController {
 	public Double sum(
 			@PathVariable(value = "numberOne") String numberOne,
 			@PathVariable(value = "numberTwo") String numberTwo
-			) {
+			)throws Exception {
 		
-		return 1D;
+		if(!isNumeric(numberOne) || !isNumeric(numberTwo) ) {
+			throw new Exception();
+		}
 		
+		return converterToDouble(numberOne) + converterToDouble(numberTwo);
+		
+	}
+
+	private Double converterToDouble(String number) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private boolean isNumeric(String number) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }
